@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-books-table
+      author: Aytac Huseynzada
+      changes:
+        - createTable:
+            tableName: books
+            schemaName: public
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: title
+                  type: VARCHAR(255)
+
+              - column:
+                  name: stock
+                  type: INT

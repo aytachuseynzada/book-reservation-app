@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-reservations-table
+      author: Aytac Huseynzada
+      changes:
+        - createTable:
+            tableName: reservations
+            schemaName: public
+            columns:
+
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: user_id
+                  type: BIGINT
+
+              - column:
+                  name: book_id
+                  type: BIGINT
+
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+
+              - column:
+                  name: approved_at
+                  type: TIMESTAMP
+
+        - addForeignKeyConstraint:
+            baseTableName: reservations
+            baseColumnNames: user_id
+            referencedTableName: users
+            referencedColumnNames: id
+            constraintName: fk_reservation_user
+
+        - addForeignKeyConstraint:
+            baseTableName: reservations
+            baseColumnNames: book_id
+            referencedTableName: books
+            referencedColumnNames: id
+            constraintName: fk_reservation_book

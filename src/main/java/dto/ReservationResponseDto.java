@@ -1,0 +1,20 @@
+package dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.time.LocalDateTime;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class ReservationResponseDto {
+    private Long id;
+    private Long userId;
+    private Long bookId;
+    private LocalDateTime createdAt;
+    private LocalDateTime approvedAt;
+}

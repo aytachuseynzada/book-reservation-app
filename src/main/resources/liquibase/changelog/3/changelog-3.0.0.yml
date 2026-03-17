@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users-table
+      author: Aytac Huseynzada
+      changes:
+        - createTable:
+            tableName: users
+            schemaName: public
+            columns:
+
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+
+              - column:
+                  name: role
+                  type: VARCHAR(50)
+
+              - column:
+                  name: active
+                  type: BOOLEAN
