@@ -22,6 +22,7 @@ public class ReservationService {
     private final BookRepository bookRepository;
     private final UserRepository userRepository;
     public void addReservation(ReservationRequestDto reservationRequestDto) {
+        // This comment added for PR demonstration
         var user = fetchUserIfExists(reservationRequestDto.getUserId());
 
         if (!user.getActive()) {
